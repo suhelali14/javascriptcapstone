@@ -43,6 +43,34 @@ function registerUser(username, email, password) {
 // Function to validate login credentials
 function validateLogin(username, password) {
     const user = users.find(user => user.username === username && user.password === password);
+    if (!username || !password) {
+
+ alert('Please enter both username and password.');
+
+ return;
+
+ }
+
+ // Username validation (alphanumeric characters only)
+
+ if (!/^[a-zA-Z0-9]+$/.test(username)) {
+
+ alert('Username should contain only alphanumeric characters.');
+
+ return;
+
+ }
+
+ // Password length validation
+
+ if (password.length < 6) {
+
+ alert('Password should be at least 6 characters long.');
+
+ return;
+
+ }
+    
     if (user) {
         currentUser = user;
         localStorage.setItem('loggedInUser', JSON.stringify(user)); // Save the session in localStorage
