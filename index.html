@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghar E Garage</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-900">
+    <header class="bg-blue-900 text-white text-center p-4 font-bold">
+        <h1 class="text-5xl">Welcome to Ghar E Garage</h1>
+        <nav class="space-x-4">
+           
+        </nav>
+    </header>
+    <main class="">
+        <section class="">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
+                <a href="#"
+                    class="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm  rounded-full bg-gray-800 text-white hover:bg-gray-200 hover:bg-gray-700"
+                    role="alert">
+                    <span class="text-xs bg-primary-600 rounded-full text-white px-4 py-1.5 mr-3">New</span> <span
+                        class="text-sm font-medium">See what's new</span>
+                    <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <h1
+                    class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-100 md:text-5xl lg:text-6xl text-white">
+                    Home services at your doorstep</h1>
+                <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 text-gray-400">Our Company
+                    is a technology platform offering a variety of services at home. Customers use our platform to book
+                    services such as beauty treatments, haircuts, massage therapy, cleaning, plumbing, carpentry,
+                    appliance repair, painting etc. These services are delivered in the comfort of their home and at a
+                    time of their choosing. We promise our customers a high quality, standardised and reliable service
+                    experience. To fulfill this promise, we work closely with our hand-picked service partners, enabling
+                    them with technology, training, products, tools, financing, insurance and brand, helping them
+                    succeed and deliver on this promise.</p>
+                <div
+                    class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+                    <a href="#"
+                        class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 focus:ring-primary-900">
+                        Learn more
+                        <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <a href="#"
+                        class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-100 rounded-lg border border-gray-300 hover:bg-gray-700 focus:ring-4 focus:ring-gray-100 text-white border-gray-700 hover:bg-gray-700 focus:ring-gray-800">
+                        <svg class="mr-2 -ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z">
+                            </path>
+                        </svg>
+                        Watch video
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <footer class="text-center p-4 bg-blue-900 text-white fixed bottom-0 w-full">
+        <p>&copy; 2024 Ghar E Garage</p>
+    </footer>
+    <script src="js/data.js"></script>
+    <script>
+        if (getLoggedInUser() == false) {
+
+            const servicesList = document.querySelector('nav');
+            const login = document.createElement('a');
+
+            login.textContent = 'login';
+            login.classList.add('hover:text-gray-200');
+            login.addEventListener('click', function () {
+                window.location.href = 'login.html';
+            });
+            servicesList.appendChild(login);
+
+            const register = document.createElement('a');
+
+            register.textContent = 'register';
+            register.classList.add('hover:text-gray-200');
+            register.addEventListener('click', function () {
+                window.location.href = 'register.html';
+            });
+            servicesList.appendChild(register);
+
+
+        }
+        else {
+            const servicesList = document.querySelector('nav');
+            const services = document.createElement('a');
+
+            services.textContent = 'Services';
+            services.classList.add('hover:text-gray-200');
+            services.addEventListener('click', function () {
+                window.location.href = 'services.html';
+            });
+            servicesList.appendChild(services);
+
+            const booking = document.createElement('a');
+
+            booking.textContent = 'Booking';
+            booking.classList.add('hover:text-gray-200');
+            booking.addEventListener('click', function () {
+                window.location.href = 'booking.html';
+            });
+            servicesList.appendChild(booking);
+
+            const logout = document.createElement('a');
+
+            logout.textContent = 'logout';
+            logout.classList.add('hover:text-gray-200');
+            logout.addEventListener('click', function () {
+                window.location.href = 'logout.html';
+            });
+            servicesList.appendChild(logout);
+        }
+    </script>
+</body>
+
+</html>
