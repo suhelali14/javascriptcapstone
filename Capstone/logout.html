@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - Ghar E Garage</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900">
+    <header class="bg-blue-900 text-white text-center p-4 font-bold">
+        <h1 class="text-5xl">Welcome to Ghar E Garage</h1>
+        <h1>Logout</h1>
+        <nav class="space-x-4"></nav>
+           
+        </nav>
+    </header>
+    <main class="flex items-center justify-center h-screen">
+        <h1 class="text-white">Log out succesfuly</h1>
+    </main>
+    <footer class="text-center p-4 bg-blue-900 text-white fixed bottom-0 w-full">
+        <p>&copy; 2024 Ghar E Garage</p>
+    </footer>
+    <script src="js/data.js"></script>
+    <script>
+        
+    </script>
+    <script>
+        if (getLoggedInUser() == false) {
+
+            const servicesList = document.querySelector('nav');
+            const login = document.createElement('a');
+
+            login.textContent = 'login';
+            login.classList.add('hover:text-gray-200');
+            login.addEventListener('click', function () {
+                window.location.href = 'login.html';
+            });
+            servicesList.appendChild(login);
+
+            const register = document.createElement('a');
+
+            register.textContent = 'register';
+            register.classList.add('hover:text-gray-200');
+            register.addEventListener('click', function () {
+                window.location.href = 'register.html';
+            });
+            servicesList.appendChild(register);
+
+
+        }
+        else {
+            const servicesList = document.querySelector('nav');
+            const services = document.createElement('a');
+
+            services.textContent = 'Services';
+            services.classList.add('hover:text-gray-200');
+            services.addEventListener('click', function () {
+                window.location.href = 'services.html';
+            });
+            servicesList.appendChild(services);
+
+            const booking = document.createElement('a');
+
+            booking.textContent = 'Booking';
+            booking.classList.add('hover:text-gray-200');
+            booking.addEventListener('click', function () {
+                window.location.href = 'booking.html';
+            });
+            servicesList.appendChild(booking);
+        }
+    </script>
+</body>
+</html>
